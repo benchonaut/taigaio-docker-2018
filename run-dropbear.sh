@@ -32,6 +32,6 @@ env|grep -e TAIGA_PUBLIC_REGISTER_ENABLED -e TAIGA_EMAIL|cut -d"_" -f2-|sed 's/=
 exec service postgresql start &
 exec /etc/init.d/nginx start &
 exec service circusd start &
-exec circusctl start taiga & 
+exec sleep 2 && exec circusctl start taiga & 
 exec /usr/sbin/dropbear -j -k -s -E -F
 
